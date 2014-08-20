@@ -1,4 +1,5 @@
-'''Get Latitude Longitude from Address
+'''
+Get latitude longitude from address using google API
 '''
 import requests
 import sys
@@ -17,6 +18,10 @@ def getlatlong(address):
     except Exception:
         print sys.exc_info()[0]
 
-if __name__ == '__main__':
+def test():
     ADD = '175 S San Antonio Rd, Los Altos, CA, USA'
-    pprint(getlatlong(ADD)['results'][0]['geometry']['location'])
+    pprint(getlatlong(ADD))
+    return
+
+if __name__ == '__main__':
+    test()
