@@ -3,7 +3,6 @@ import requests, lxml.html,sys
 Extract movie shooting locations from IMDB
 '''
 
-
 '''lambda functions'''
 cleandata = lambda x:x.strip('\n').strip()
 
