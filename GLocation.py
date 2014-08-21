@@ -1,14 +1,14 @@
 '''
 Get latitude longitude from address using google API
 '''
+
+from pprint import pprint
 import requests
 import sys
-from pprint import pprint
 import config
 
 def getlatlong(address):
-    '''
-    returns lat and long from address
+    '''returns lat and long from address
     '''
 
     url = 'https://maps.googleapis.com/maps/api/geocode/json'
@@ -16,17 +16,12 @@ def getlatlong(address):
     payload['address'] = address
 
     try:
-        return requests.get(url, params=payload).json()
+        r = requests.get(url, params=payload)
+        if r.status_code == 200 and r.json().get('results'):
+            return r.json()['results'][0]['geometry']['location']
+        else:
+            return None
+
     except Exception:
         print sys.exc_info()[0]
         return None
-
-def test():
-    '''sample test function'''
-
-    ADD = 'Hatley Castle, Royal Roads, Colwood, British Columbia, Canada'
-    pprint(getlatlong(ADD)['results'][0]['geometry']['location'])
-    return
-
-if __name__ == '__main__':
-    test()
