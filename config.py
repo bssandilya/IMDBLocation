@@ -1,1 +1,1 @@
-CONFIG = {'apikey': 'AIzaSyD3ojJrvbxvEikhBiLjMAOpPME1piNzCyMq'}
+CONFIG = {'apikey': 'AIzaSyD3ojJrvbxvEikhBiLjMAOpPME1piNzCyM','DBURI':'50.247.86.71:61288','DBUSER':'locationuser','DBPWD':'Techn1c0l0r','DBNAME':'locationdb'}

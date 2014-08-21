@@ -1,4 +1,6 @@
 import requests, lxml.html,sys
+import config
+from dbconnect import dbconnect
 '''
 Extract movie shooting locations from IMDB
 '''
@@ -37,7 +39,7 @@ def main():
     import pymongo, random, time
     con = pymongo.MongoClient()
     db = con['imdb']
-    db2 = con['locationsdb']
+    db2 = dbconnect()
     cur = db.top_100k.find().sort('votes',-1)
     for each in cur:
         res = getlocations(constructUrl(each['_id']))

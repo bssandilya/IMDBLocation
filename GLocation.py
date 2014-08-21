@@ -22,8 +22,10 @@ def getlatlong(address):
         return None
 
 def test():
-    ADD = '175 S San Antonio Rd, Los Altos, CA, USA'
-    pprint(getlatlong(ADD))
+    '''sample test function'''
+
+    ADD = 'Hatley Castle, Royal Roads, Colwood, British Columbia, Canada'
+    pprint(getlatlong(ADD)['results'][0]['geometry']['location'])
     return
 
 if __name__ == '__main__':
